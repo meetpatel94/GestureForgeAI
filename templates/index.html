@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1020">
+    <title>GestureForge AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="application-shell">
+        <header class="top-navigation">
+            <a class="brand" href="/" aria-label="GestureForge AI home">
+                <span class="brand-mark" aria-hidden="true">GF</span>
+                <span>
+                    <strong>GestureForge</strong>
+                    <small>AI WORKSPACE</small>
+                </span>
+            </a>
+
+            <div class="system-status" aria-label="System status">
+                <div class="status-item">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span>Camera <strong>Ready</strong></span>
+                </div>
+                <div class="status-item fps-status">
+                    <span class="status-label">FPS</span>
+                    <strong>--</strong>
+                </div>
+            </div>
+
+            <button class="theme-control" type="button" aria-label="Theme control placeholder">
+                <span aria-hidden="true">☾</span>
+                <span>Dark</span>
+            </button>
+        </header>
+
+        <section class="workspace-layout" aria-label="GestureForge AI workspace">
+            <aside class="tool-panel" aria-label="Drawing tools">
+                <p class="panel-label">TOOLS</p>
+                <nav class="tool-list">
+                    <button class="tool-button is-active" type="button"><span aria-hidden="true">✦</span><span>Draw</span></button>
+                    <button class="tool-button" type="button"><span aria-hidden="true">⌫</span><span>Eraser</span></button>
+                    <span class="tool-divider" aria-hidden="true"></span>
+                    <button class="tool-button" type="button"><span aria-hidden="true">↶</span><span>Undo</span></button>
+                    <button class="tool-button" type="button"><span aria-hidden="true">↷</span><span>Redo</span></button>
+                    <button class="tool-button" type="button"><span aria-hidden="true">×</span><span>Clear</span></button>
+                    <span class="tool-divider" aria-hidden="true"></span>
+                    <button class="tool-button" type="button"><span aria-hidden="true">⇩</span><span>Export</span></button>
+                </nav>
+            </aside>
+
+            <section class="workspace" aria-label="Camera and drawing workspace">
+                <div class="workspace-heading">
+                    <div>
+                        <p class="eyebrow">LIVE WORKSPACE</p>
+                        <h1>Gesture canvas</h1>
+                    </div>
+                    <span class="connection-chip"><span aria-hidden="true"></span> Awaiting camera</span>
+                </div>
+
+                <div class="camera-stage">
+                    <div class="camera-placeholder" aria-label="Camera preview placeholder">
+                        <div class="camera-grid" aria-hidden="true"></div>
+                        <div class="camera-message">
+                            <span class="camera-symbol" aria-hidden="true">◉</span>
+                            <strong>Camera preview</strong>
+                            <p>Your live gesture workspace will appear here.</p>
+                        </div>
+                        <span class="camera-corner corner-top-left" aria-hidden="true"></span>
+                        <span class="camera-corner corner-top-right" aria-hidden="true"></span>
+                        <span class="camera-corner corner-bottom-left" aria-hidden="true"></span>
+                        <span class="camera-corner corner-bottom-right" aria-hidden="true"></span>
+                    </div>
+
+                    <canvas class="drawing-canvas" aria-label="Transparent drawing canvas placeholder"></canvas>
+                    <div class="virtual-cursor" aria-label="Virtual cursor placeholder"><span></span></div>
+                    <div class="loading-overlay" aria-label="Workspace loading placeholder">
+                        <span class="loading-orbit" aria-hidden="true"></span>
+                        <span>Preparing gesture environment</span>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <footer class="status-bar" aria-label="Workspace status">
+            <div class="status-readout">
+                <span class="readout-label">CURRENT GESTURE</span>
+                <strong>Waiting for input</strong>
+            </div>
+            <div class="status-readout">
+                <span class="readout-label">CURSOR POSITION</span>
+                <strong>--, --</strong>
+            </div>
+            <div class="status-readout">
+                <span class="readout-label">CURRENT MODE</span>
+                <strong class="mode-value"><span aria-hidden="true"></span> Draw</strong>
+            </div>
+            <div class="status-readout detection-readout">
+                <span class="readout-label">HAND DETECTION</span>
+                <strong><span class="muted-dot" aria-hidden="true"></span> Not detected</strong>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
